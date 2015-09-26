@@ -31,7 +31,7 @@ def run_unit_tests(project, logger):
   logger.debug("Setting initial nose properties")
 
   project.set_property('nose_where', test_dir)
-  project.set_property('nose_cover-package', 'src/main/python')
+  project.set_property('nose_cover-package', src_dir)
   project.set_property('nose_with-coverage', True)
   project.set_property('nose_cover-xml', True)
   project.set_property('nose_cover-xml-file', xml_file)
