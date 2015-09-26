@@ -1,14 +1,20 @@
-from pybuilder.core import task, init, depends
+from pybuilder.core import task, init, depends, use_plugin, description
+from pybuilder.errors import BuildFailedException
 import os, sys, subprocess
 from pybuilder_nose.utils import getProperCwd
 from pybuilder_nose.utils import getImportantDirs
 from pybuilder_nose.utils import prepareArgs
 
+use_plugin('python.core')
+
 @init
 def init_nose(project, logger):
   project.build_depends_on('nose')
+  project.build_depends_on('coverage')
 
 @task('run_unit_tests')
+@description('Run your entire test suite with Node')
+@depends('prepare')
 def run_unit_tests(project, logger):
 
   # set cwd to project root

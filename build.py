@@ -12,7 +12,7 @@ use_plugin('python.install_dependencies')
 use_plugin('copy_resources')
 
 name = 'pybuilder-nose'
-version = '0.0.1'
+version = '0.0.2'
 
 authors = [Author('Alex Dowgailenko','adow@psikon.com')]
 url = 'https://github.com/alex-dow/pybuilder_nose'
@@ -45,8 +45,7 @@ def set_properties(project):
     'setup.cfg'
   ])
 
-  print project.properties
-
+  project.depends_on_requirements('requirements.txt')
   project.build_depends_on_requirements('dev-requirements.txt')
 
   
