@@ -11,13 +11,9 @@ class UtilsTest(unittest.TestCase):
     self.project.set_property('dir_source_main_python', 'src/main/python')
     self.project.set_property('dir_target','target')
 
-  def test_properCwd(self):
-    cwd = os.path.realpath(os.path.dirname(__file__) + "/../../../")
-
-    self.assertEquals(cwd, utils.getProperCwd())
-
   def test_importDirs(self):
-    cwd = utils.getProperCwd()
+    cwd = os.getcwd()
+    
     dirs = utils.getImportantDirs(self.project)
     
     # src_dir

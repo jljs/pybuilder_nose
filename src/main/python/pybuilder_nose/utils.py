@@ -1,10 +1,7 @@
 import os
 
-def getProperCwd():
-  return os.path.realpath(os.path.dirname(__file__) + "/../../../../")
-
 def getImportantDirs(project):
-  cwd = getProperCwd()
+  cwd = os.getcwd()
   html_dir = cwd + "/" + project.expand("$dir_target/reports/coverage_html")
   xml_file = cwd + "/" + project.expand("$dir_target/reports/coverage.xml")
   xunit_file = cwd + "/" + project.expand("$dir_target/reports/coverage.xunit.xml")

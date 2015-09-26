@@ -2,7 +2,7 @@
 import sys
 sys.path.insert(0, 'src/main/python')
 
-from pybuilder_nose.tasks import run_unit_tests, clean_coverage
+from pybuilder_nose import run_unit_tests, clean_coverage, init_nose
 from pybuilder.core import Author, init, use_plugin
 
 

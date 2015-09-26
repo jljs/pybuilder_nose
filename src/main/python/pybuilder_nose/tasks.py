@@ -1,7 +1,6 @@
 from pybuilder.core import task, init, depends, use_plugin, description
 from pybuilder.errors import BuildFailedException
 import os, sys, subprocess
-from pybuilder_nose.utils import getProperCwd
 from pybuilder_nose.utils import getImportantDirs
 from pybuilder_nose.utils import prepareArgs
 
@@ -18,10 +17,6 @@ def init_nose(project, logger):
 def run_unit_tests(project, logger):
 
   # set cwd to project root
-  oldcwd = os.getcwd()
-  cwd = getProperCwd()
-  os.chdir(cwd)
-
   src_dir, test_dir, html_dir, xml_file, xunit_file = getImportantDirs(project)
 
   logger.debug("SRC dir: %s" % src_dir)
@@ -73,8 +68,6 @@ def run_unit_tests(project, logger):
     logger.error('Unit tests failed with exit code %s' % noseProc.returncode)
     raise BuildFailedException('Unit tests did not pass')
 
-  os.chdir(oldcwd)
-      
 
 @depends('run_unit_tests')
 @task
@@ -85,8 +78,7 @@ def analyze(project, logger):
 @task('clean')
 def clean_coverage(project, logger):
   
-  cwd = getProperCwd()
-  coverage_file = cwd + "/.coverage"
+  coverage_file = ".coverage"
 
   if os.path.exists(coverage_file):
     logger.debug("Removing %s" % coverage_file)
