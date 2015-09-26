@@ -10,7 +10,7 @@ use_plugin('python.core')
 use_plugin('python.distutils')
 use_plugin('python.install_dependencies')
 
-name = 'pybuilder_nose'
+name = 'pybuilder-nose'
 version = '0.0.1'
 
 authors = [Author('Alex Dowgailenko','adow@psikon.com')]
