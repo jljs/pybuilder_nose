@@ -9,6 +9,7 @@ from pybuilder.core import Author, init, use_plugin
 use_plugin('python.core')
 use_plugin('python.distutils')
 use_plugin('python.install_dependencies')
+use_plugin('copy_resources')
 
 name = 'pybuilder-nose'
 version = '0.0.1'
@@ -36,6 +37,15 @@ def set_properties(project):
     'Programming Language :: Python :: 2',
     'Programming Language :: Python :: 2.7'
   ])
+
+  project.set_property('copy_resources_target', project.get_property('dir_dist'))
+  project.set_property('copy_resources_glob', [
+    'LICENSE',
+    'README.md',
+    'setup.cfg'
+  ])
+
+  print project.properties
 
   project.build_depends_on_requirements('dev-requirements.txt')
 
