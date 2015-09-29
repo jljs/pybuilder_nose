@@ -14,7 +14,8 @@ def prepareArgs(project):
 
   args = []
 
-  for propName, propValue in project.properties.iteritems():
+  for propName in project.properties:
+    propValue = project.properties[propName]
     if propName.startswith('nose_'):
       propName = propName.replace('nose_', '')
       
