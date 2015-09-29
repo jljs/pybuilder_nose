@@ -28,4 +28,11 @@ This is equivalent to running
 $ nodetests --html-coverage-dir=/path/to/html
 ```
 
+## Todo List
+Separate coverage from unit tests so you can have both an analze and a run_unit_tests task
+
+## Changelog
+
+0.0.5 - Fixed a py3 incompatibility
+
 
