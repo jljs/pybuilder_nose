@@ -2,7 +2,7 @@
 
 PyBuilder plugin to easily run nosetests.
 
-further further further Testing jenkins/github interation
+seems like this setup is buggy... further further further Testing jenkins/github interation
 
 ## Usage
 
