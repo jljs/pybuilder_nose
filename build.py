@@ -12,7 +12,7 @@ use_plugin('python.install_dependencies')
 use_plugin('copy_resources')
 
 name = 'pybuilder-nose'
-version = '0.0.4'
+version = '0.0.5'
 
 authors = [Author('Alex Dowgailenko','adow@psikon.com')]
 url = 'https://github.com/alex-dow/pybuilder_nose'
@@ -27,7 +27,7 @@ default_task = ['clean', 'install_dependencies', 'publish']
 def set_properties(project):
   project.set_property('flake8_verbose_output', True)
 
-  project.get_property('distutils_commands').append('bdist_wheel')
+  project.get_property('distutils_commands')
   project.set_property('distutils_classifiers', [
     'Development Status :: 3 - Alpha',
     'Environment :: Console',
