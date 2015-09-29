@@ -4,6 +4,8 @@ PyBuilder plugin to easily run nosetests.
 
 seems like this setup is buggy... further further further Testing jenkins/github interation
 
+maybe deleting the workspace will help?
+
 ## Usage
 
 Add plugin dependency to your build.py
