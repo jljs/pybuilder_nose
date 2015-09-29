@@ -73,7 +73,6 @@ def run_unit_tests(project, logger):
 @task
 def analyze(project, logger):
   logger.debug("ANALYZE TASK")
-  pass
 
 @task('clean')
 def clean_coverage(project, logger):
