@@ -55,7 +55,7 @@ def run_unit_tests(project, logger):
     logger.debug('Nose arg: %s' % arg)
 
   noseEnv = os.environ.copy()
-  noseEnv["PYTHONPATH"] = "src/main/python"
+  #noseEnv["PYTHONPATH"] = "src/main/python"
 
   logger.info("Launching nosetests")
   noseProc = subprocess.Popen(args, stdout=subprocess.PIPE, env=noseEnv)
