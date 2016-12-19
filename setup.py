@@ -2,12 +2,12 @@ from setuptools import setup, find_packages
 
 setup(
     name="pybuilder_nose",
-    packages=find_packages(),
+    packages = ['pybuilder_nose'],
     version="0.0.5",
     description="A call stack profiler for Python. Inspired by Apple's Instruments.app",
     author='Alex Dow',
     url='https://github.com/jljs/pybuilder_nose',
-    zip_safe=False,
+    zip_safe=True,
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Console',
