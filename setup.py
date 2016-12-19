@@ -2,6 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pybuilder_nose",
+    packages=['pybuilder_nose'],
     version="0.0.5",
     description="A call stack profiler for Python. Inspired by Apple's Instruments.app",
     author='Alex Dow',
