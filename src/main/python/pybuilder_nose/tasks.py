@@ -58,7 +58,7 @@ def run_unit_tests(project, logger):
   #noseEnv["PYTHONPATH"] = "src/main/python"
 
   logger.info("Launching nosetests")
-  noseProc = subprocess.Popen(args, stdout=subprocess.PIPE, env=noseEnv)
+  noseProc = subprocess.Popen(args, stdout=subprocess.PIPE, env=noseEnv, shell=True)
 
   while noseProc.poll() is None:
     l = noseProc.stdout.readline()
